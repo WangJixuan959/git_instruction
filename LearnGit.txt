@@ -1,0 +1,25 @@
+个人信息配置：用户名/邮箱：（一次即可）
+git config --global user.email "3372797826@qq.com"
+git config --global user.name "WangJixuan959"
+
+管理目录下的文件状态
+git status
+注：新增的文件和修改后的文件都是红色
+
+管理指定的文件：（红变绿）
+git add 文件名
+git add . （全部文件）
+
+生成版本：
+git commit -m “描述信息”
+
+查看版本记录
+git log
+
+回滚至之前的版本：
+git log
+git reset --hard 版本号
+
+回滚至之后的版本
+git reflog
+
