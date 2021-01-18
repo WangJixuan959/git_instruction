@@ -5,7 +5,11 @@ git config --global user.name "WangJixuan959"
 管理目录下的文件状态
 git status
 注：新增的文件和修改后的文件都是红色
-//
+
+//创建文档
+touch 文件名
+
+// 管理，增加，修改，更新文件后提交代码的流程
 管理指定的文件：（红变绿）
 git add 文件名
 git add . （全部文件）
@@ -23,7 +27,8 @@ git reset --hard 版本号
 回滚至之后的版本
 git reflog
 git reset --hard 版本号
-//
+
+//分支操作
 查看分支
 git branch
 
@@ -39,15 +44,58 @@ git merge 要合并的分支
 
 删除分支：
 git branch -d 分支名称
-//
+
+//将代码上传难道github
 给远程仓库起别名
 git remote add origin 远程仓库地址
 
 向远程仓库推送代码（上传代码）
 git push -u origin 分支
 
+//在另一台电脑上拉代码
 克隆远程仓库代码
 git clone 远程仓库地址
 
 切换分支
 git checkout 分支
+
+//在另一台电脑上开发：
+1.切换到dev分支进行开发
+git checkout dev
+2.把master分支合并到dev【仅一次】
+git merge master
+3.修改代码
+4.提交代码
+git add .
+git commit -m 'xx'
+git push origin dev
+
+//回到家中本来的电脑上继续开发
+1.切换到dev分支进行开发
+git checkout dev
+2.拉代码
+git pull origin dev（等价于git fetch origin dev + git merge origin/dev）
+3.继续开发
+4.提交代码
+git add .
+git commit -m 'xx'
+git push origin dev
+
+//在公司继续开发
+...
+
+//开发完毕 上线流程（将dev分支合并到master上，master实行上线）
+1.dev分支合并到master，进行上线
+git checkout master
+git merge dev
+git push origin master
+2.把dev分支也推送到远程
+git checkout dev
+git merge master
+git push origin dev
+
+//保持代码提交整洁
+git rebase
+
+//记录图形展示
+git log --graph --pretty=format："%h %s"
