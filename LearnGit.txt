@@ -5,7 +5,7 @@ git config --global user.name "WangJixuan959"
 管理目录下的文件状态
 git status
 注：新增的文件和修改后的文件都是红色
-
+//
 管理指定的文件：（红变绿）
 git add 文件名
 git add . （全部文件）
@@ -23,7 +23,7 @@ git reset --hard 版本号
 回滚至之后的版本
 git reflog
 git reset --hard 版本号
-
+//
 查看分支
 git branch
 
@@ -39,4 +39,15 @@ git merge 要合并的分支
 
 删除分支：
 git branch -d 分支名称
+//
+给远程仓库起别名
+git remote add origin 远程仓库地址
 
+向远程仓库推送代码（上传代码）
+git push -u origin 分支
+
+克隆远程仓库代码
+git clone 远程仓库地址
+
+切换分支
+git checkout 分支
